@@ -96,25 +96,25 @@ Create an admin user after entering the password.
 After login, go to Manage Jenkins > Manage Plugins > Available plugins and install "Sonarqube scanner" plugin
 
 Restart Jenkins after installation of plugin by going to the following link
-
-> http://<ec2-public-ip>:8080/restart
-
+```
+http://<ec2-public-ip>:8080/restart
+```
 Go to Jenkins Dashboard and create new item. 
 
 Choose "Freestyle Project" , enter a name and click on "OK"
 
 Go to source code management, choose git, provide the details of the git repository and select the main branch. 
-
-> https://github.com/Arthi-24/Jenkins-Sonarqube-Docker.git
-
+```
+https://github.com/Arthi-24/Jenkins-Sonarqube-Docker.git
+```
 Go to build trigger section and select github hook trigger for GIT scm polling
 
 For the webhook, go to the settings for the repository "Jenkins-Sonarqube-Docker", select webhooks in the left pane and click on add webhook. 
 
 The payload url should point to the Jenkins server
-
-> http://<ec2-public-ip>:8080/github-webhook/
-
+```
+http://<ec2-public-ip>:8080/github-webhook/
+```
 Content type is Application/json
 
 Click on add webhook to finalize setting up the webhook. 
@@ -124,9 +124,9 @@ Any change in code in git scm will now trigger the build job in Jenkins.
 **Logging in sonarqube**
 
 log into sonarqube using the following link 
-
-> http://<ec2-public-ip>:9000
-
+```
+http://<ec2-public-ip>:9000
+```
 The default username is admin. Password is admin. 
 
 Create a new project manually, enter the project name and click on setup.
